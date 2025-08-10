@@ -8,8 +8,43 @@ espressoCore = "3.7.0"
 appcompat = "1.7.1"
 material = "1.12.0"
 constraintlayout = "2.2.1"
+
+# RecyclerView
+recyclerview = "1.4.0"
+
+# Fragment
+fragment = "1.8.8"
+
+# ActivityKtx
+activity = "1.10.1"
+
+# Navigation Component
 navigationFragmentKtx = "2.9.3"
 navigationUiKtx = "2.9.3"
+
+# hilt
+hilt = "2.56.2"
+
+#Ksp
+devtoolsKsp = "2.0.20-1.0.24"
+
+# Coroutines
+coroutines = "1.10.2"
+
+# room
+room = "2.6.1"
+
+# Retrofit
+retrofit = "2.10.0"
+okhttp3 = "4.11.0"
+
+# gson
+gson = "2.9.0"
+
+# ViewModel y LiveData
+lifecycleLivedataKtx = "2.9.1"
+
+
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -19,10 +54,51 @@ androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-co
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+
+# RecyclerView
+androidx-recyclerview = { group = "androidx.recyclerview", name = "recyclerview", version.ref = "recyclerview" }
+
+# Fragment
+androidx-fragment = { group = "androidx.fragment", name = "fragment", version.ref = "fragment" }
+# Activity Ktx
+androidx-activity-ktx = { group = "androidx.activity", name = "activity-ktx", version.ref = "activity" }
+
+# Navigation Component
 androidx-navigation-fragment-ktx = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "navigationFragmentKtx" }
 androidx-navigation-ui-ktx = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigationUiKtx" }
+#androidx-navigation-dynamic-features-fragment = { group = "androidx.navigation", name = "navigation-dynamic-features-fragment", version.ref = "navigation" }
+
+# DI hilt
+hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt"}
+hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hilt"}
+
+# Coroutines
+coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "coroutines" }
+coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "coroutines" }
+
+# Retrofit
+retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
+squareup-okhttp = { group = "com.squareup.okhttp3", name = "logging-interceptor" , version.ref = "okhttp3"}
+
+# gson
+gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
+
+# ViewModel y LiveData
+androidx-lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycleLivedataKtx" }
+androidx-lifecycle-livedata-ktx = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "lifecycleLivedataKtx" }
+androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleLivedataKtx" }
+androidx-lifecycle-viewmodel-savedstate-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-savedstate", version.ref = "lifecycleLivedataKtx" }
+androidx-lifecycle-common-java8-ktx = { group = "androidx.lifecycle", name = "lifecycle-common-java8", version.ref = "lifecycleLivedataKtx" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 
+# DI hilt
+hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
+ksp = { id ="com.google.devtools.ksp", version.ref = "devtoolsKsp"}
+
+#kotlin-parcelize = { id = "org.jetbrains.kotlin.plugin.parcelize", version.ref = "kotlinParcelize" }
+
+androidx-navigation-safe-args = { id = "androidx.navigation.safeargs.kotlin", version.ref = "navigationFragmentKtx" }
