@@ -1,35 +1,17 @@
 package com.example.pruebaandroid.data.network
 
-import com.example.pruebaandroid.core.RetrofitHelper
 import com.example.pruebaandroid.data.model.CosaModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import javax.inject.Inject
 
 
-class QuoteService {
+class QuoteService @Inject constructor(private val api: CosasApiClient){
 
-    private val retrofit = RetrofitHelper.getRetrofit()
-
-    suspend fun getCosas(): List<CosaModel>{
-        return withContext(Dispatchers.IO){
-            val response = retrofit.create(QuoteApiClient::class.java).getAllCosas()
-            response.body() ?: emptyList()
-    }
-}
-}
-
-/*
-* class QuoteService {
-
-    private val retrofit = RetrofitHelper.getRetrofit()
-
-    suspend fun getQuotes(): List<QuoteModel> {
+    suspend fun getCosas(): List<CosaModel> {
         return withContext(Dispatchers.IO) {
-            val response = retrofit.create(QuoteApiClient::class.java).getAllQuotes()
+            val response = api.getAllCosas()
             response.body() ?: emptyList()
         }
     }
-
 }
-*
-* */

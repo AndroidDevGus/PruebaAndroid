@@ -9,13 +9,15 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import com.example.pruebaandroid.databinding.FragmentFirstBinding
-import com.example.pruebaandroid.ui.viewmodel.QuoteViewModel
+import com.example.pruebaandroid.ui.viewmodel.CosaViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class FirstFragment : Fragment() {
 
     private var _binding: FragmentFirstBinding? = null
 
-    private val cosaViewModel: QuoteViewModel by viewModels()
+    private val cosaViewModel: CosaViewModel by viewModels()
 
     private val binding get() = _binding!!
 

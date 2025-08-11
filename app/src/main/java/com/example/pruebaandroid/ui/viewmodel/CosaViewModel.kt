@@ -6,15 +6,18 @@ import androidx.lifecycle.viewModelScope
 import com.example.pruebaandroid.data.model.CosaModel
 import com.example.pruebaandroid.domain.GetCosasUseCase
 import com.example.pruebaandroid.domain.GetRandomCosasUseCase
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class QuoteViewModel: ViewModel() {
+@HiltViewModel
+class CosaViewModel @Inject constructor(
+    private var getCosasUseCase: GetCosasUseCase,
+    private var getRandomCosasUseCase: GetRandomCosasUseCase
+): ViewModel() {
 
     val cosaModel = MutableLiveData<CosaModel>()
     val isLoading = MutableLiveData<Boolean>()
-
-    var getCosasUseCase = GetCosasUseCase()
-    var getRandomCosasUseCase = GetRandomCosasUseCase()
 
     fun onCreate(){
         viewModelScope.launch {
