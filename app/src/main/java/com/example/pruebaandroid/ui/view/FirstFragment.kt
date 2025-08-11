@@ -1,14 +1,15 @@
-package com.example.pruebaandroid.view
+package com.example.pruebaandroid.ui.view
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import com.example.pruebaandroid.databinding.FragmentFirstBinding
-import com.example.pruebaandroid.viewmodel.QuoteViewModel
+import com.example.pruebaandroid.ui.viewmodel.QuoteViewModel
 
 class FirstFragment : Fragment() {
 
@@ -27,12 +28,17 @@ class FirstFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        cosaViewModel.onCreate()
+
         cosaViewModel.cosaModel.observe(viewLifecycleOwner, Observer {
             binding.textviewFirst.text = it.name
         })
 
+        cosaViewModel.isLoading.observe(viewLifecycleOwner, Observer {
+            binding.loading.isVisible = it
+        })
+
         binding.buttonFirst.setOnClickListener {
-            //findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
             cosaViewModel.randomCosa()
         }
     }

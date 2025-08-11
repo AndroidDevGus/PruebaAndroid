@@ -1,16 +1,16 @@
-package com.example.pruebaandroid.viewmodel
-
-import com.example.pruebaandroid.model.CosaModel
+package com.example.pruebaandroid.data.model
 
 class CosaProvider {
     companion object {
 
-        fun random(): CosaModel {
+        var cosas: List<CosaModel> = emptyList()
+
+        /*fun random(): CosaModel {
             val position = (0..10).random()
             return cosa[position]
-        }
+        }*/
 
-        private val cosa = listOf(
+        /*private val cosa = listOf(
             CosaModel(
                 name = "It’s not a bug. It’s an undocumented feature!",
                 decription = "Anonymous"
@@ -46,6 +46,6 @@ class CosaProvider {
                 decription = "Anonymous"
             ),
             CosaModel(name = "¿A que esperas?, suscríbete.", decription = "AristiDevs")
-        )
+        )*/
     }
 }
